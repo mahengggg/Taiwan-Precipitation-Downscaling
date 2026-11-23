@@ -62,4 +62,8 @@ The diffusion-based approach was adapted and investigated for precipitation down
 
 ## Code Availability
 
-Code and documentation will be organized and added to this repository.
+This repository contains the diffusion model architecture, training scripts, inference and visualization code, and the trained model checkpoint (`Model/45.pt`) used in this study.
+
+QPESUMS precipitation datasets are not included. Users are required to obtain the necessary data separately and modify the file paths in the scripts according to their local environment.
+
+Detailed experimental results and performance evaluations are presented in the accompanying thesis.
