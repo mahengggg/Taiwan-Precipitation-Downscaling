@@ -4,19 +4,19 @@
 
 ## Overview
 
-This repository is associated with a master's thesis conducted at the Department of Civil Engineering, National Chung Hsing University, Taiwan.
+This repository provides research code associated with a study on diffusion-based precipitation downscaling over Taiwan, conducted at the Department of Civil Engineering, National Chung Hsing University, Taiwan.
 
-This study investigates the application of a diffusion-based generative model (DM) for high-resolution precipitation downscaling over Taiwan.
+The study investigates the application of a diffusion-based generative model (DM) to enhance the spatial resolution of precipitation forecasts over Taiwan.
 
-The proposed framework performs 20-fold spatial downscaling, transforming coarse-resolution precipitation fields (0.25°) into high-resolution precipitation estimates (0.0125°, approximately 1.25 km).
+The framework performs 20-fold spatial downscaling, transforming coarse-resolution precipitation fields (0.25°) into high-resolution precipitation estimates (0.0125°, approximately 1.25 km).
 
-The study also investigates the application of the diffusion model to GraphCast precipitation forecasts.
+The framework is further evaluated using GraphCast precipitation forecasts to investigate its applicability to high-resolution precipitation forecasting over Taiwan.
 
 ## Research Objectives
 
 - Develop a diffusion-based precipitation downscaling framework for Taiwan.
 - Reconstruct high-resolution precipitation patterns from coarse-resolution inputs.
-- Evaluate the downscaling performance against QPESUMS precipitation data.
+- Evaluate downscaling performance against QPESUMS precipitation estimates.
 - Compare the diffusion model with Quantile Mapping (QM).
 - Investigate the application of diffusion-based downscaling to GraphCast precipitation forecasts.
 
@@ -29,7 +29,9 @@ The study also investigates the application of the diffusion model to GraphCast 
 - **Target resolution:** 0.0125°
 - **Precipitation accumulation:** 12 hours
 
-## Evaluation
+QPESUMS precipitation datasets are not distributed with this repository. Users must obtain the required data separately.
+
+## Evaluation Metrics
 
 The study evaluates precipitation downscaling performance using:
 
@@ -40,30 +42,65 @@ The study evaluates precipitation downscaling performance using:
 - Fractions Skill Score (FSS)
 - Power Spectral Density (PSD)
 
+Detailed experimental results are presented in the associated research manuscript.
+
+## Repository Contents
+
+- `src/Network.py` — Diffusion model architecture and EDM preconditioning.
+- `src/datasetTaiwan.py` — Precipitation dataset loading and preprocessing.
+- `src/diffusiontrain_Taiwan.py` — Diffusion model training and sampling.
+- `src/inference.py` — Model inference and visualization.
+- `Model/45.pt` — Trained model checkpoint used for precipitation downscaling.
+- `requirements.txt` — Python package dependencies.
+- `figure/` — Selected precipitation downscaling visualizations.
+
+## Environment and Usage
+
+The code was developed using Python and PyTorch.
+
+Install the required Python packages using:
+
+```bash
+pip install -r requirements.txt
+```
+
+A CUDA-compatible PyTorch installation may be required for GPU-based execution.
+
+Users must configure dataset paths according to their local computing environments. QPESUMS data are not included in this repository.
+
 ## Original Research and Acknowledgements
 
-This work builds upon the ClimateDiffuse framework developed by Robbie A. Watt and Laura A. Mansfield.
+This research builds upon the ClimateDiffuse framework developed by Robbie A. Watt and Laura A. Mansfield.
 
 Original repository: https://github.com/robbiewatt1/ClimateDiffuse
 
-The diffusion-based approach was adapted and investigated for precipitation downscaling over Taiwan.
+The diffusion-based framework was adapted for precipitation downscaling over Taiwan, including the use of high-resolution QPESUMS precipitation data and applications involving GraphCast forecasts.
 
-## Thesis
+The original research and associated implementations should be acknowledged and cited where applicable.
 
-**Title:** Application of a Diffusion-Based Deep Learning Model for Downscaling Precipitation Forecasts in Taiwan
+## Research Team
 
-**Author:** Chia-Jeng Chen & Ya-Heng Ma
+- **Chia-Jeng Chen**
+- **Ya-Heng Ma**
 
-**Institution:** National Chung Hsing University
+Department of Civil Engineering, National Chung Hsing University, Taiwan.
 
-**Department:** Civil Engineering
+## Publication
 
-**Year:** 2026
+**Manuscript title:** Application of a Diffusion-Based Deep Learning Model for Downscaling Precipitation Forecasts in Taiwan
+
+**Authors:** Chia-Jeng Chen and Ya-Heng Ma
+
+**Institution:** National Chung Hsing University, Taiwan
+
+**Status:** Manuscript in preparation
+
+Publication details, including the journal, DOI, and citation information, will be updated following publication.
 
 ## Code Availability
 
-This repository contains the diffusion model architecture, training scripts, inference and visualization code, and the trained model checkpoint (`Model/45.pt`) used in this study.
+The research code, model architecture, training scripts, inference and visualization code, and trained model checkpoint (`Model/45.pt`) are provided in this repository.
 
-QPESUMS precipitation datasets are not included. Users are required to obtain the necessary data separately and modify the file paths in the scripts according to their local environment.
+The QPESUMS precipitation datasets are not included. Users are responsible for obtaining the necessary datasets and adjusting file paths to match their local environments.
 
-Detailed experimental results and performance evaluations are presented in the accompanying thesis.
+GitHub repository: https://github.com/mahengggg/Taiwan-Precipitation-Downscaling
