@@ -1,0 +1,13 @@
+# Dependencies identified from the three research Python scripts.
+# Versions are based on the provided installed-package list.
+# The original environment used PyTorch 2.6.0 + CUDA 12.4 (cu124).
+# For matching GPU wheels, follow the PyTorch installation instructions
+# for your operating system and CUDA platform.
+
+numpy==2.3.5
+torch==2.6.0
+torchvision==0.21.0
+matplotlib==3.10.8
+Cartopy==0.25.0
+tensorboard==2.20.0
+tqdm==4.67.1
